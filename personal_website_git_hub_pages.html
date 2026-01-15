@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lucas Crow</title>
+  <meta name="description" content="Lucas Crow — AI technologist, founder, and positive team builder" />
+  <style>
+    :root {
+      --bg: #f8f6f2;
+      --surface: #ffffff;
+      --text: #1c1c1c;
+      --muted: #6b6b6b;
+      --accent: #c4ad86;
+      --accent-soft: #efe6d6;
+      --accent-dark: #9f875a;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 50% -10%, var(--accent-soft), transparent), var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal { opacity: 0; transform: translateY(30px); transition: all 0.9s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    header {
+      padding: 7rem 1.5rem 5rem;
+      text-align: center;
+      animation: fadeUp 1.1s ease forwards;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      letter-spacing: -0.035em;
+      margin-bottom: 0.75rem;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.25rem;
+      max-width: 780px;
+      margin: 0 auto 2rem;
+    }
+
+    nav a {
+      margin: 0 0.9rem;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 2px;
+      background: var(--accent-dark);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after { width: 100%; }
+
+    main {
+      max-width: 1150px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 6rem;
+    }
+
+    section { margin-bottom: 6rem; }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    h3 { margin-bottom: 0.4rem; }
+
+    /* ABOUT / HERO */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 3.5rem;
+    }
+
+    @media (max-width: 850px) { .about-grid { grid-template-columns: 1fr; } }
+
+    .photo {
+      background: var(--accent-soft);
+      border-radius: 28px;
+      aspect-ratio: 3 / 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* QUICK HIGHLIGHTS */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .highlight {
+      background: var(--surface);
+      padding: 1.5rem 1.75rem;
+      border-radius: 22px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+
+    /* FYNCH FEATURE */
+    .fynch {
+      background: linear-gradient(135deg, var(--accent-soft), #ffffff);
+      border-radius: 36px;
+      padding: 3rem 3.5rem;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .fynch::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(600px 300px at 80% 0%, rgba(196,173,134,0.35), transparent);
+      pointer-events: none;
+    }
+
+    .cta {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 999px;
+      background: var(--text);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .timeline-item {
+      background: var(--surface);
+      padding: 1.75rem 2rem;
+      border-radius: 24px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.06);
+    }
+
+    .fun-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .fun {
+      background: var(--accent-soft);
+      padding: 1.4rem 1.6rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Lucas Crow</h1>
+    <p>
+      Technologist with AI experience, founder, and positive team player who enjoys building
+      reliable systems — and making the process enjoyable along the way.
+    </p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#fynch">Fynch</a>
+      <a href="#work">Experience</a>
+      <a href="#life">Life</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="reveal">
+      <h2>About me</h2>
+      <div class="about-grid">
+        <div>
+          <p>
+            I’m Lucas — a curious, optimistic technologist who likes solving real problems with
+            thoughtful design and strong execution. I bring energy to teams, take ownership of my
+            work, and care deeply about doing things well.
+          </p>
+          <p>
+            My background spans AI-adjacent engineering, cloud infrastructure, and entrepreneurship.
+            I’m especially interested in how intelligent systems, good tooling, and human-centered
+            design come together to create great products.
+          </p>
+        </div>
+        <div class="photo">Portrait photo</div>
+      </div>
+    </section>
+
+    <section id="highlights" class="reveal">
+      <h2>What I do</h2>
+      <div class="highlights">
+        <div class="highlight">
+          <h3>AI & Systems</h3>
+          <p>Experience with AI-focused study, observability, and large-scale systems.</p>
+        </div>
+        <div class="highlight">
+          <h3>Engineering</h3>
+          <p>Cloud and observability engineering at Northern Trust, focused on reliability and scale.</p>
+        </div>
+        <div class="highlight">
+          <h3>Entrepreneurship</h3>
+          <p>Co-owner of a digital product studio building thoughtful, modern software.</p>
+        </div>
+        <div class="highlight">
+          <h3>Team Energy</h3>
+          <p>Collaborative, positive, and motivated — I like moving things forward together.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="fynch" class="reveal">
+      <div class="fynch">
+        <h2>Fynch Interactive</h2>
+        <p>
+          I’m the co-owner of <strong>Fynch Interactive</strong>, a digital product studio focused on
+          building well-designed, reliable software. Entrepreneurship matters to me — I value
+          ownership, momentum, and long-term thinking.
+        </p>
+        <p>
+          My role spans product direction, outreach, strategy, and hands-on technical work, helping
+          turn ideas into real, usable products.
+        </p>
+        <a class="cta" href="#">Visit Fynch</a>
+      </div>
+    </section>
+
+    <section id="work" class="reveal">
+      <h2>Experience & education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h3>Cloud & Observability Engineer — Northern Trust</h3>
+          <p>Supported scalable infrastructure, monitoring, and reliability for critical systems.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Co-Owner — Fynch Interactive</h3>
+          <p>Product leadership, engineering execution, and business growth.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Director of Outreach — Mizzou Robotics</h3>
+          <p>Led partnerships, visibility, and community engagement.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>B.S. — University of Missouri (Mizzou)</h3>
+          <p>Undergraduate education grounded in technology and systems thinking.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>M.S. in Artificial Intelligence — Purdue University (Incoming)</h3>
+          <p>Graduate studies focused on applied AI and machine learning.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="life" class="reveal">
+      <h2>Life & interests</h2>
+      <div class="fun-grid">
+        <div class="fun">Mindfulness, yoga, and intentional movement</div>
+        <div class="fun">Oil painting and visual exploration</div>
+        <div class="fun">Currently reading: <em>Book title here</em></div>
+        <div class="fun">Building calm systems for everyday life</div>
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <h2>Contact</h2>
+      <p>
+        <strong>Email:</strong> yourname@email.com<br />
+        <strong>GitHub:</strong> github.com/yourusername<br />
+        <strong>LinkedIn:</strong> linkedin.com/in/yourusername
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Lucas Crow · Positive energy, real execution · GitHub Pages
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
